@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(-45deg, #2f3e46, #354f52, #52796f, #84a98c);
+  background-size: 400% 400%;
+  animation: grad 20s ease infinite;
+  font-family: 'Roboto Mono', monospace;
+}
+
+@keyframes grad {
+  0% { background-position: 0 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0 50%; }
+}
+
+.clock-panel {
+  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 2rem 3rem;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+#time {
+  font-size: 3.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow:
+    0 0 4px rgba(255, 255, 255, 0.6),
+    0 0 8px rgba(255, 255, 255, 0.4);
+  margin-bottom: 0.5rem;
+}
+
+#date {
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.8);
+  opacity: 0.9;
+}
+
+@media (max-width: 480px) {
+  .clock-panel {
+    padding: 1.5rem 2rem;
+  }
+  #time {
+    font-size: 2.5rem;
+  }
+  #date {
+    font-size: 0.95rem;
+  }
+}
